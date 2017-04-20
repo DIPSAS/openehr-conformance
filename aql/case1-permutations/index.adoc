@@ -1,0 +1,69 @@
+= Repeating AQLs
+
+== The problem 
+How to handle permutation on structures. 
+
+== Examples 
+
+=== AQL 1
+----
+select
+o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
+ o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units as Units
+-- , o/protocol[at0007]/items[at0008]/value as Protocol
+from
+   COMPOSITION c
+contains
+   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
+----
+
+=== AQL 2
+----
+select
+e/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
+e/data[at0003]/items[at0004]/items[at0005]/value/units as Units
+-- , o/protocol[at0007]/items[at0008]/value as Protocol
+from
+   COMPOSITION c
+contains
+   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
+contains EVENT e   
+----
+
+|====
+|Magn| Units
+|1|a 
+|1|b 
+|2|a
+|2|b 
+|3|c
+|====
+
+==== AQL 3
+----
+select
+e/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
+e/data[at0003]/items[at0004]/items[at0005]/value/units as Units,
+o/protocol[at0007]/items[at0008]/value as Protocol
+from
+   COMPOSITION c
+contains
+   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
+contains EVENT e   
+----
+
+|====
+|Magn| Units| Protocol
+|1|a| x 
+|1|a| y
+|1|b| x
+|1|b| y
+|.|.|.
+
+|====
+   
+   
+   
+
+
+

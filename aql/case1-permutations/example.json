@@ -1,0 +1,36 @@
+{
+    "observation": {
+        "origin": "t1",
+        "anyEvent": [{
+                "time": "t2",
+                "cluster": [{
+                        "the measurement": {
+                            "value": 1,
+                            "units": "a"
+                        }
+                    },
+                    {
+                        "the measurement": {
+                            "value": 2,
+                            "units": "b"
+                        }
+                    }
+                ]
+            },
+            {
+                "time": "t3",
+                "cluster": [{
+                    "the measurement": {
+                        "value": 3,
+                        "units": "c"
+                    }
+                }]
+            }
+        ],
+        "protocol": {
+            "the_repeatable_element": [
+                "X", "Y"
+            ]
+        }
+    }
+}
