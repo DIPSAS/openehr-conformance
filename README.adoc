@@ -1,2 +1,12 @@
-# openehr-conformance
-Documentation and examples related to the conformance on openEHR implementations. 
+= OpenEHR Conformance
+== Background 
+This repository was created to collect some challenges we are facing when implementing an openEHR solution. We want to share the problems and the way we (DIPS AS) have solved them. By doing this the open way we want to contribute to a shared conformance on how to implement openEHR applications. 
+
+== Areas 
+
+* AQL 
+
+== AQL 
+There is currently one Case in AQL area; the permutation problem. 
+
+The problem we have faced is how to interpret and create a resultset when EVENTS in an OBSERVATION is repeated. 
