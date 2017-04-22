@@ -1,111 +1,114 @@
 <?xml version="1.0" encoding="utf-16"?>
 <!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
-<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
-  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
-  <totalResults>18</totalResults>
-  <columns>
-    <name>Magn</name>
-    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude</path>
-  </columns>
-  <columns>
-    <name>Units</name>
-    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units</path>
-  </columns>
-  <columns>
-    <name>Protocol</name>
-    <path>/protocol[at0007]/items[at0008]/value/value</path>
-  </columns>
-  <rows>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">X</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">a</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">h</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">1</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">2</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-    <row>
-      <items xsi:type="xs:double">3</items>
-      <items xsi:type="xs:string">min</items>
-      <items xsi:type="xs:string">Y</items>
-    </row>
-  </rows>
-  <tags />
+<resultSet 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://schemas.openehr.org/v1">
+    <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+    <totalResults>18</totalResults>
+    <columns>
+        <name>Magn</name>
+        <path>/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude</path>
+    </columns>
+    <columns>
+        <name>Units</name>
+        <path>/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units</path>
+    </columns>
+    <columns>
+        <name>Protocol</name>
+        <path>/protocol[at0007]/items[at0008]/value/value</path>
+    </columns>
+    <rows>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">X</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">a</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">h</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">1</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">2</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+        <row>
+            <items xsi:type="xs:double">3</items>
+            <items xsi:type="xs:string">min</items>
+            <items xsi:type="xs:string">Y</items>
+        </row>
+    </rows>
+    <tags />
 </resultSet>

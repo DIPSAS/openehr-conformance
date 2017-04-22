@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
-<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+<resultSet 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://schemas.openehr.org/v1">
   <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
   <totalResults>10</totalResults>
   <columns>
