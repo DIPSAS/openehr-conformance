@@ -1,35 +1,155 @@
-= Repeating AQLs
+= Case1 -  Repeating containers
 
 == The problem 
-How to handle permutation on structures. 
+openEHR archetypes may contain structures that may be repeated at almost any level. The problem is how to interpret AQL and what the resultset should be. 
+
+The problem is : 
+
+* how to handle permutations and just return an endles combination of all combinations
+* how to make the user define exactly what kind of resultset he wants 
+
+
+
+For this case we have created an OBSERVATION archetype `openEHR-EHR-OBSERVATION.multiple_events_cluster.v0`. The structure of this archetype is as follows: 
+
+----
+Header
+   Concept: Multiple events and clusters
+
+Definition
+   OBSERVATION
+
+  DATA = {
+      Structure = TREE
+      Items 
+               The repeating cluster (0..*)
+                  - A CLUSTER that may be repeated unbounded.
+                  Items 
+                        The repeating measurement (0..*)
+                        The repeating measurement
+                          DataType = Quantity
+                          Constraint: Physical property = Time;
+                                  Units = yr;
+                                  Units = hr;
+                                  Units = min;
+                                  Units = microsec;
+                                  Units = sec;
+                                  Units = wk;
+
+
+         EventSeries = {
+            Any event (0..*) 
+              - *
+            Event
+
+         } -- end EventSeries
+
+  } -- end Data
+
+  PROTOCOL = {
+      Structure = TREE
+      Items 
+               Some protocol value (0..*)
+               Some protocol value
+                 DataType = Text
+                 Constraint: Text;
+
+
+     } -- end Protocol
+
+----
+
+The case contains one Composition (example_real) in both json and xml representation. Below is a "pseudo_composition" to describe the problem. 
+
+----
+{
+    "observation": {
+        "origin": "t1",
+        "anyEvent": [{
+                "time": "t2",
+                "cluster": [{
+                        "the measurement": {
+                            "value": 1,
+                            "units": "a"
+                        }
+                    },
+                    {
+                        "the measurement": {
+                            "value": 2,
+                            "units": "b"
+                        }
+                    }
+                ]
+            },
+            {
+                "time": "t3",
+                "cluster": [{
+                    "the measurement": {
+                        "value": 3,
+                        "units": "c"
+                    }
+                }]
+            }
+        ],
+        "protocol": {
+            "the_repeatable_element": [
+                "X", "Y"
+            ]
+        }
+    }
+}
+----
+
 
 == Examples 
+In the following there are several candidate AQL's with their expected result_set based on the Composition above. 
+
 
 === AQL 1
+
+'AQL 1' is a normal pattern to query this kind of data. One select statement for each attribute. 
+
 ----
 select
-o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
- o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units as Units
--- , o/protocol[at0007]/items[at0008]/value as Protocol
+ o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
+ o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units as Units,
+ o/protocol[at0007]/items[at0008]/value as Protocol
 from
    COMPOSITION c
 contains
    OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
 ----
 
+This result set should be the complete permutation of all variables defined in the AQL. Given the total set of varibales to be: 
+
+* The measurment value: 1,2,3
+* The measument units: a,b,c 
+* The protocol value: x,y
+
+Then the result set should be all permutation of the above parameter set. 
+
+
 === AQL 2
+
+'AQL 2' add one more CONTAINS clause to the AQL, and we have removed the protocol 
+
 ----
 select
 e/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
 e/data[at0003]/items[at0004]/items[at0005]/value/units as Units
--- , o/protocol[at0007]/items[at0008]/value as Protocol
+-- <1>
 from
    COMPOSITION c
 contains
    OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
-contains EVENT e   
+contains EVENT e  -- <2>
 ----
+<1> Removed the protocol
+<2> Added "contains EVENT e" 
 
+The following table lists the expected result. 
+
+[cols="^,^", options="header", width="50"]
 |====
 |Magn| Units
 |1|a 
@@ -40,18 +160,26 @@ contains EVENT e
 |====
 
 ==== AQL 3
+'AQL 3' is based on 'AQL 2' with the addition of protocol in select. 
+
 ----
 select
 e/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
 e/data[at0003]/items[at0004]/items[at0005]/value/units as Units,
-o/protocol[at0007]/items[at0008]/value as Protocol
+o/protocol[at0007]/items[at0008]/value as Protocol -- <1>
 from
    COMPOSITION c
 contains
    OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
 contains EVENT e   
 ----
+<1> Protocol added  from 'AQL 2'
 
+The resultset from this AQL is based on the result from 'AQL 2' but you will get a permutation with all values from the protocol. 
+
+The table below shows the inital values of this result set. 
+
+[cols="^,^,^", options="header", width="50"]
 |====
 |Magn| Units| Protocol
 |1|a| x 
