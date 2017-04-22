@@ -1,0 +1,114 @@
+{
+    "_type": "RESULTSET",
+    "_schemaVersion": "1.0.0",
+    "_format": "raw",
+    "_created": "2017-04-22T22:28:44.779+02:00",
+    "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+    "name": null,
+    "totalResults": 18,
+    "columns": [{
+            "name": "Magn",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude"
+        },
+        {
+            "name": "Units",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units"
+        },
+        {
+            "name": "Protocol",
+            "path": "/protocol[at0007]/items[at0008]/value/value"
+        }
+    ],
+    "rows": [
+        [
+            1.0,
+            "a",
+            "X"
+        ],
+        [
+            2.0,
+            "a",
+            "X"
+        ],
+        [
+            3.0,
+            "a",
+            "X"
+        ],
+        [
+            1.0,
+            "h",
+            "X"
+        ],
+        [
+            2.0,
+            "h",
+            "X"
+        ],
+        [
+            3.0,
+            "h",
+            "X"
+        ],
+        [
+            1.0,
+            "min",
+            "X"
+        ],
+        [
+            2.0,
+            "min",
+            "X"
+        ],
+        [
+            3.0,
+            "min",
+            "X"
+        ],
+        [
+            1.0,
+            "a",
+            "Y"
+        ],
+        [
+            2.0,
+            "a",
+            "Y"
+        ],
+        [
+            3.0,
+            "a",
+            "Y"
+        ],
+        [
+            1.0,
+            "h",
+            "Y"
+        ],
+        [
+            2.0,
+            "h",
+            "Y"
+        ],
+        [
+            3.0,
+            "h",
+            "Y"
+        ],
+        [
+            1.0,
+            "min",
+            "Y"
+        ],
+        [
+            2.0,
+            "min",
+            "Y"
+        ],
+        [
+            3.0,
+            "min",
+            "Y"
+        ]
+    ]
+}
