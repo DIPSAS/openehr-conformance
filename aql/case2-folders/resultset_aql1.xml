@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
+<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+  <totalResults>1</totalResults>
+  <columns>
+    <name>myFolder</name>
+    <path />
+  </columns>
+  <rows>
+    <row>
+      <items xsi:type="FOLDER" archetype_node_id="openEHR-EHR-FOLDER.generic_dips.v1">
+        <name>
+          <value>Innkomstjournal</value>
+        </name>
+        <uid xsi:type="OBJECT_VERSION_ID">
+          <value>ae810161-ab37-474b-b01e-eb069785a7f8::ehr_craft::1</value>
+        </uid>
+        <archetype_details>
+          <archetype_id>
+            <value>openEHR-EHR-FOLDER.generic_dips.v1</value>
+          </archetype_id>
+          <template_id>
+            <value>Innkomstjournal2.v1.0.0</value>
+          </template_id>
+          <rm_version>1.0.2</rm_version>
+        </archetype_details>
+        <folders archetype_node_id="at0001">
+          <name>
+            <value>Tidligere sykdommer</value>
+          </name>
+        </folders>
+        <folders archetype_node_id="at0001">
+          <name>
+            <value>Observasjoner</value>
+          </name>
+        </folders>
+      </items>
+    </row>
+  </rows>
+  <tags />
+</resultSet>

@@ -1,0 +1,60 @@
+= AQL and Resultset for Folders 
+
+== Background 
+This case collects some of the use-cases related to openEHR FOLDER and queries on them. 
+
+
+== Example 1: Basic query 
+The first example is the simplest possible query on FOLDER. Select one folder. 
+
+[source]
+----
+SELECT 
+    f as myFolder
+FROM 
+    FOLDER f
+LIMIT 1
+----
+Resultset:: resultset_aql1.xml / resultset_aql1.json 
+
+WARNING: There are no ordering in this select. What is the expected order of the resultset? 
+
+TIP: DIPS AS has proposed to add time information on folder to make it possible to ORDER BY time. This gives a possible query as below: 
+
+
+[source]
+----
+SELECT 
+    f as myFolder
+FROM 
+    FOLDER f
+ORDER BY f/context/start_time 
+LIMIT 1
+----
+
+
+
+
+== Example 2: Basic query with uid/value 
+
+[source]
+----
+SELECT
+    fparent/uid/value as ParentUid,
+    fchild/uid/value as ChildUid 
+FROM 
+    folder fparent 
+    contains folder fchild 
+LIMIT  1
+----
+
+Below is the important part of the resultset. What we see is that the parent has UID and the child not. This is because we only add UID on the parent folder. UID is an optional attribute from http://www.openehr.org/releases/RM/latest/docs/common/common.html#_locatable_class[LOCATABLE] which FOLDER is a subclass of. 
+[source]
+----
+ "rows": [
+    [
+      "ae810161-ab37-474b-b01e-eb069785a7f8::ehr_craft::1",
+      null
+    ]
+  ]
+----

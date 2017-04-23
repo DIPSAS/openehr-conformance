@@ -9,8 +9,13 @@ This repository was created to collect some challenges we are facing when implem
 
 
 == AQL 
-There is currently one Case in AQL area; the permutation problem. 
 
-The problem we have faced is how to interpret and create a resultset when EVENTS in an OBSERVATION is repeated. 
+=== The permutation problem 
+The first case added is the the permutation problem. The problem we have faced is how to interpret and create a resultset when EVENTS in an OBSERVATION is repeated. 
 
 include::aql/case1-permutations/index.adoc[leveloffset=+2]
+
+=== AQL on FOLDER 
+AQL on FOLDER has some issues. In case 2 we have added some examples on how to query folders. 
+
+include::aql/case2-folders/index.adoc[leveloffset=+2]
