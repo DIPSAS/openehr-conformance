@@ -1,0 +1,25 @@
+{
+  "_type": "RESULTSET",
+  "_schemaVersion": "1.0.0",
+  "_format": "raw",
+  "_created": "2017-04-23T09:01:57.468+02:00",
+  "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+  "name": null,
+  "totalResults": 1,
+  "columns": [
+    {
+      "name": "ParentUid",
+      "path": "/uid/value"
+    },
+    {
+      "name": "ChildUid",
+      "path": "/uid/value"
+    }
+  ],
+  "rows": [
+    [
+      "ae810161-ab37-474b-b01e-eb069785a7f8::ehr_craft::1",
+      null
+    ]
+  ]
+}

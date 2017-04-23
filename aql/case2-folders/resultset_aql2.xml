@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
+<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+  <totalResults>1</totalResults>
+  <columns>
+    <name>ParentUid</name>
+    <path>/uid/value</path>
+  </columns>
+  <columns>
+    <name>ChildUid</name>
+    <path>/uid/value</path>
+  </columns>
+  <rows>
+    <row>
+      <items xsi:type="xs:string">ae810161-ab37-474b-b01e-eb069785a7f8::ehr_craft::1</items>
+      <items xsi:nil="true" />
+    </row>
+  </rows>
+  <tags />
+</resultSet>

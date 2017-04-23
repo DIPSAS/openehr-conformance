@@ -1,0 +1,53 @@
+{
+  "_type": "RESULTSET",
+  "_schemaVersion": "1.0.0",
+  "_format": "raw",
+  "_created": "2017-04-23T09:01:29.716+02:00",
+  "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+  "name": null,
+  "totalResults": 1,
+  "columns": [
+    {
+      "name": "myFolder",
+      "path": null
+    }
+  ],
+  "rows": [
+    [
+      {
+        "_type": "FOLDER",
+        "archetype_node_id": "openEHR-EHR-FOLDER.generic_dips.v1",
+        "name": {
+          "value": "Innkomstjournal"
+        },
+        "uid": {
+          "_type": "OBJECT_VERSION_ID",
+          "value": "ae810161-ab37-474b-b01e-eb069785a7f8::ehr_craft::1"
+        },
+        "archetype_details": {
+          "archetype_id": {
+            "value": "openEHR-EHR-FOLDER.generic_dips.v1"
+          },
+          "template_id": {
+            "value": "Innkomstjournal2.v1.0.0"
+          },
+          "rm_version": "1.0.2"
+        },
+        "folders": [
+          {
+            "archetype_node_id": "at0001",
+            "name": {
+              "value": "Tidligere sykdommer"
+            }
+          },
+          {
+            "archetype_node_id": "at0001",
+            "name": {
+              "value": "Observasjoner"
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}
