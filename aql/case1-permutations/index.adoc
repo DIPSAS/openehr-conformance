@@ -8,9 +8,29 @@ The problem is :
 * how to handle permutations and just return an endles combination of all combinations
 * how to make the user define exactly what kind of resultset he wants 
 
+One simple example may be `openEHR-EHR-OBSERVATION.body_weight.v1` which have an optional and repeating 'any_event'. Below is a straigt forward AQL on this archetype. We are asking for the `origin` from the `HISTORY` attribute, and then for each repeating event we want the weight magnitude and unit. 
 
+As you see from the AQL there is an additional WHERE clausul telling that we only want weight with magnitude less than 45. 
 
-For this case we have created an OBSERVATION archetype `openEHR-EHR-OBSERVATION.multiple_events_cluster.v0`. The structure of this archetype is as follows: 
+The question is: *What do you expect as result from this query?* 
+
+[source]
+----
+ select
+        o/data[at0002]/origin/value as time,
+        o/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as Weight,
+        o/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/units as Unit 
+    from
+        composition c 
+    contains
+        observation o[openEHR-EHR-OBSERVATION.body_weight.v1] 
+    where
+        o/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude < 45  
+    order by
+        o/data[at0002]/origin/value desc 
+----
+
+The question above seems simple. But is not. To illustrate this case we have created an OBSERVATION archetype `openEHR-EHR-OBSERVATION.multiple_events_cluster.v0`. This archetype has repeating structures in almost any leve. The structure of this archetype is as follows: 
 
 [source]
 ----
@@ -18,8 +38,7 @@ Header
    Concept: Multiple events and clusters
 
 Definition
-   OBSERVATION
-
+OBSERVATION
   DATA = {
       Structure = TREE
       Items 
@@ -36,17 +55,12 @@ Definition
                                   Units = microsec;
                                   Units = sec;
                                   Units = wk;
-
-
          EventSeries = {
             Any event (0..*) 
-              - *
-            Event
 
          } -- end EventSeries
 
   } -- end Data
-
   PROTOCOL = {
       Structure = TREE
       Items 
@@ -57,7 +71,6 @@ Definition
 
 
      } -- end Protocol
-
 ----
 
 The case contains one Composition (example_real) in both json and xml representation. 
