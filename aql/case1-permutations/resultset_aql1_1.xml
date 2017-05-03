@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
+<resultSet 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://schemas.openehr.org/v1">
+  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+  <totalResults>6</totalResults>
+  <columns>
+    <name>Protocol</name>
+    <path>/protocol[at0007]/items[at0008]/value</path>
+  </columns>
+  <columns>
+    <name>Element</name>
+    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value</path>
+  </columns>
+  <rows>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>X</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>1</magnitude>
+        <units>a</units>
+      </items>
+    </row>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>Y</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>1</magnitude>
+        <units>a</units>
+      </items>
+    </row>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>X</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>2</magnitude>
+        <units>h</units>
+      </items>
+    </row>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>Y</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>2</magnitude>
+        <units>h</units>
+      </items>
+    </row>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>X</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>3</magnitude>
+        <units>min</units>
+      </items>
+    </row>
+    <row>
+      <items xsi:type="DV_TEXT">
+        <value>Y</value>
+      </items>
+      <items xsi:type="DV_QUANTITY">
+        <magnitude>3</magnitude>
+        <units>min</units>
+      </items>
+    </row>
+  </rows>
+  <tags />
+</resultSet>

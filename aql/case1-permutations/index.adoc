@@ -1,3 +1,4 @@
+:imagesdir: images
 = Case1 -  Repeating containers
 
 == The problem 
@@ -118,6 +119,10 @@ Below is a "pseudo_composition" to describe the problem.
 }
 ----
 
+The following diagram give another view on the structure: 
+
+image::AQL_Permutation_Structure.jpg[]
+
 
 == Examples 
 In the following there are several candidate AQL's with their expected result_set based on the Composition above. 
@@ -127,6 +132,7 @@ In the following there are several candidate AQL's with their expected result_se
 
 'AQL 1' is a normal pattern to query this kind of data. One select statement for each attribute. 
 
+[source]
 ----
 select
  o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
@@ -140,7 +146,7 @@ contains
 
 This result set should be the complete permutation of all variables defined in the AQL. Given the total set of varibales to be: 
 
-* The measurment value: 1,2,3
+* The measurement value: 1,2,3
 * The measument units: a,b,c 
 * The protocol value: x,y
 
@@ -151,6 +157,37 @@ Then the result set should be all permutation of the above parameter set.
 include::resultset_aql1.json[]
 ----
 
+==== AQL 1.1 
+The following is a small adjustment on the previous AQL. Instead of querying `magnitude` and `units` separately we will query the DataValue (here DV_QUANTITY). 
+
+This example alings better with the the great feedback from Seref Arikan. https://github.com/serefarikan/aql-discussion[]. 
+
+
+[source]
+----
+SELECT 
+o/protocol[at0007]/items[at0008]/value as Protocol,
+o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value as Element      
+
+FROM 
+    COMPOSITION c  
+CONTAINS
+    OBSERVATION o
+        [openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]              
+   
+----
+This AQL will return the following resultset. Which is found as resultset_aql1_1.(json|xml).
+
+[cols="^,^", options="header", width="50"]
+|====
+|Protocol | Element
+|X| (1,a)
+|Y| (1,a)
+|X| (2,h)
+|Y| (2,h)
+|X| (3,min)
+|Y| (3,min)
+|====
 
 === AQL 2
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
+<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+  <totalResults>3</totalResults>
+  <columns>
+    <name>Origin</name>
+    <path>/data[at0001]/origin/value</path>
+  </columns>
+  <columns>
+    <name>EventTime</name>
+    <path>/time/value</path>
+  </columns>
+  <columns>
+    <name>Systolic</name>
+    <path>/data[at0003]/items[at0004]/value/magnitude</path>
+  </columns>
+  <columns>
+    <name>Diastolic</name>
+    <path>/data[at0003]/items[at0005]/value/magnitude</path>
+  </columns>
+  <columns>
+    <name>Mansjett</name>
+    <path>/protocol[at0011]/items[at0013]/value/value</path>
+  </columns>
+  <rows>
+    <row>
+      <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
+      <items xsi:type="xs:string">2017-05-02T20:05:00+02:00</items>
+      <items xsi:type="xs:double">100</items>
+      <items xsi:type="xs:double">90</items>
+      <items xsi:type="xs:string">Lår voksne</items>
+    </row>
+    <row>
+      <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
+      <items xsi:type="xs:string">2017-05-02T20:10:00+02:00</items>
+      <items xsi:type="xs:double">101</items>
+      <items xsi:type="xs:double">91</items>
+      <items xsi:type="xs:string">Lår voksne</items>
+    </row>
+    <row>
+      <items xsi:type="xs:string">2017-05-02T20:15:00+02:00</items>
+      <items xsi:type="xs:string">2017-05-02T20:20:00+02:00</items>
+      <items xsi:type="xs:double">102</items>
+      <items xsi:type="xs:double">92</items>
+      <items xsi:type="xs:string">Store voksne</items>
+    </row>
+  </rows>
+  <tags />
+</resultSet>

@@ -1,0 +1,80 @@
+{
+  "_type": "RESULTSET",
+  "_schemaVersion": "1.0.0",
+  "_format": "raw",
+  "_created": "2017-05-02T08:10:55.503+02:00",
+  "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+  "name": null,
+  "totalResults": 6,
+  "columns": [{
+      "name": "Protocol",
+      "path": "/protocol[at0007]/items[at0008]/value"
+    },
+    {
+      "name": "Element",
+      "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value"
+    }
+  ],
+  "rows": [
+    [{
+        "_type": "DV_TEXT",
+        "value": "X"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 1.0,
+        "units": "a"
+      }
+    ],
+    [{
+        "_type": "DV_TEXT",
+        "value": "Y"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 1.0,
+        "units": "a"
+      }
+    ],
+    [{
+        "_type": "DV_TEXT",
+        "value": "X"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 2.0,
+        "units": "h"
+      }
+    ],
+    [{
+        "_type": "DV_TEXT",
+        "value": "Y"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 2.0,
+        "units": "h"
+      }
+    ],
+    [{
+        "_type": "DV_TEXT",
+        "value": "X"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 3.0,
+        "units": "min"
+      }
+    ],
+    [{
+        "_type": "DV_TEXT",
+        "value": "Y"
+      },
+      {
+        "_type": "DV_QUANTITY",
+        "magnitude": 3.0,
+        "units": "min"
+      }
+    ]
+  ]
+}
