@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!--DIPS.OpenEhr.ResultSets.Serialization.Xml.ResultSetXmlWriter (5.0.0.0)-->
+<resultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1">
+  <correlationid>00000000-0000-0000-0000-000000000000</correlationid>
+  <totalResults>1</totalResults>
+  <columns>
+    <name>Origin</name>
+    <path>/data[at0001]/origin/value</path>
+  </columns>
+  <columns>
+    <name>EventTime</name>
+    <path>/data[at0001]/events[at0002]/time/value</path>
+  </columns>
+  <columns>
+    <name>Eye</name>
+    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value/value</path>
+  </columns>
+  <columns>
+    <name>Verbal</name>
+    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value/value</path>
+  </columns>
+  <columns>
+    <name>Motor</name>
+    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/value</path>
+  </columns>
+  <columns>
+    <name>Score</name>
+    <path>/data[at0001]/events[at0002]/data[at0003]/items[at0026]/value/magnitude</path>
+  </columns>
+  <rows>
+    <row>
+      <items xsi:type="xs:string">2017-05-03T08:30:00+02:00</items>
+      <items xsi:type="xs:string">2017-05-03T08:35:00+02:00</items>
+      <items xsi:type="xs:int">2</items>
+      <items xsi:type="xs:int">2</items>
+      <items xsi:type="xs:int">2</items>
+      <items xsi:type="xs:double">6</items>
+    </row>
+  </rows>
+  <tags />
+</resultSet>
