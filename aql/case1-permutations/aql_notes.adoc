@@ -1,0 +1,62 @@
+Gitt Arena EHR Server: http://atp-acsagents.westeurope.cloudapp.azure.com:9000 
+
+[source]
+----
+SELECT
+el/value/magnitude as Magnitude,
+el/value/units as Units ,
+o/protocol[at0007]/items[at0008]/value/value as Protocol,
+c/uid/value as CID
+FROM       COMPOSITION c     
+CONTAINS   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]    
+CONTAINS   POINT_EVENT e  
+CONTAINS   CLUSTER cu   
+CONTAINS   ELEMENT el   
+WHERE c/uid/value = 'f6c51223-7700-4d5b-9c6a-a976d54fe13d::91215053-854b-45b8-bb2a-3b0d255858d1::1'
+----
+Gir 6 treff 
+
+[source]
+----
+SELECT
+cu/items[at0005]/value/magnitude as Magnitude,
+cu/items[at0005]/value/units as Units ,
+o/protocol[at0007]/items[at0008]/value/value as Protocol,
+c/uid/value as CID
+FROM       COMPOSITION c     
+CONTAINS   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]    
+CONTAINS   POINT_EVENT e  
+CONTAINS   CLUSTER cu   
+CONTAINS   ELEMENT el    
+WHERE c/uid/value = 'f6c51223-7700-4d5b-9c6a-a976d54fe13d::91215053-854b-45b8-bb2a-3b0d255858d1::1'
+----   
+Gir 6 treff
+
+[source]
+----
+SELECT
+e/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magnitude,
+e/data[at0003]/items[at0004]/items[at0005]/value/units as Units,
+o/protocol[at0007]/items[at0008]/value as Protocol, 
+c/uid/value as CID
+FROM   COMPOSITION c
+CONTAINS    OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
+CONTAINS POINT_EVENT e 
+WHERE c/uid/value = 'f6c51223-7700-4d5b-9c6a-a976d54fe13d::91215053-854b-45b8-bb2a-3b0d255858d1::1'
+----
+Gir 10 treff
+
+[source]
+----
+SELECT
+ o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/magnitude as Magn,
+ o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0005]/value/units as Units,
+ o/protocol[at0007]/items[at0008]/value/value as Protocol,
+ c/uid/value as CID
+FROM
+   COMPOSITION c
+CONTAINS
+   OBSERVATION o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0]
+WHERE c/uid/value = 'f6c51223-7700-4d5b-9c6a-a976d54fe13d::91215053-854b-45b8-bb2a-3b0d255858d1::1'
+----
+Gir 18 treff

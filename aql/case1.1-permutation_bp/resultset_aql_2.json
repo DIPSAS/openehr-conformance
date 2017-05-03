@@ -1,0 +1,54 @@
+{
+  "_type": "RESULTSET",
+  "_schemaVersion": "1.0.0",
+  "_format": "raw",
+  "_created": "2017-05-03T06:43:10.191+02:00",
+  "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+  "name": null,
+  "totalResults": 3,
+  "columns": [
+    {
+      "name": "Origin",
+      "path": "/data[at0001]/origin/value"
+    },
+    {
+      "name": "EventTime",
+      "path": "/time/value"
+    },
+    {
+      "name": "Systolic",
+      "path": "/data[at0003]/items[at0004]/value/magnitude"
+    },
+    {
+      "name": "Diastolic",
+      "path": "/data[at0003]/items[at0005]/value/magnitude"
+    },
+    {
+      "name": "Mansjett",
+      "path": "/protocol[at0011]/items[at0013]/value/value"
+    }
+  ],
+  "rows": [
+    [
+      "2017-05-02T20:00:00+02:00",
+      "2017-05-02T20:05:00+02:00",
+      100.0,
+      90.0,
+      "Adult thigh"
+    ],
+    [
+      "2017-05-02T20:00:00+02:00",
+      "2017-05-02T20:10:00+02:00",
+      101.0,
+      91.0,
+      "Adult thigh"
+    ],
+    [
+      "2017-05-02T20:15:00+02:00",
+      "2017-05-02T20:20:00+02:00",
+      102.0,
+      92.0,
+      "Large adult"
+    ]
+  ]
+}
