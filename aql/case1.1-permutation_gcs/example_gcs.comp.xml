@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<composition p1:type="COMPOSITION" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" archetype_node_id="openEHR-EHR-COMPOSITION.encounter.v1" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openehr.org/v1">
+  <name>
+    <value>Case 1.2 - GCS - Permutation</value>
+  </name>
+  <uid xsi:type="OBJECT_VERSION_ID">
+    <value>55d7fee5-5352-474e-b380-83e5cb6e1a61::91215053-854b-45b8-bb2a-3b0d255858d1::1</value>
+  </uid>
+  <archetype_details>
+    <archetype_id>
+      <value>openEHR-EHR-COMPOSITION.encounter.v1</value>
+    </archetype_id>
+    <template_id>
+      <value>Case 1.2 - GCS - Permutation</value>
+    </template_id>
+    <rm_version>1.0.2</rm_version>
+  </archetype_details>
+  <language>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>nb</code_string>
+  </language>
+  <territory>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>NO</code_string>
+  </territory>
+  <category>
+    <value />
+    <defining_code>
+      <terminology_id>
+        <value>openehr</value>
+      </terminology_id>
+      <code_string>433</code_string>
+    </defining_code>
+  </category>
+  <composer xsi:type="PARTY_IDENTIFIED">
+    <name>default</name>
+  </composer>
+  <context>
+    <start_time>
+      <value>2017-05-03T08:51:34.3390752+02:00</value>
+    </start_time>
+    <setting>
+      <value>secondary medical</value>
+      <defining_code>
+        <terminology_id>
+          <value>openehr</value>
+        </terminology_id>
+        <code_string>232</code_string>
+      </defining_code>
+    </setting>
+    <other_context xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tree</value>
+      </name>
+    </other_context>
+  </context>
+  <content xsi:type="OBSERVATION" archetype_node_id="openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1">
+    <name>
+      <value>Glasgow Coma Scale#1</value>
+    </name>
+    <archetype_details>
+      <archetype_id>
+        <value>openEHR-EHR-OBSERVATION.glasgow_coma_scale_dips.v1</value>
+      </archetype_id>
+      <template_id>
+        <value>Case 1.2 - GCS - Permutation</value>
+      </template_id>
+      <rm_version>1.0.2</rm_version>
+    </archetype_details>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <encoding>
+      <terminology_id>
+        <value>IANA</value>
+      </terminology_id>
+      <code_string>UTF-8</code_string>
+    </encoding>
+    <subject xsi:type="PARTY_SELF" />
+    <data archetype_node_id="at0001">
+      <name>
+        <value>Event Series</value>
+      </name>
+      <origin>
+        <value>2017-05-03T08:30:00+02:00</value>
+      </origin>
+      <events xsi:type="POINT_EVENT" archetype_node_id="at0002">
+        <name>
+          <value>Tidspunkt</value>
+        </name>
+        <time>
+          <value>2017-05-03T08:35:00+02:00</value>
+        </time>
+        <data xsi:type="ITEM_TREE" archetype_node_id="at0003">
+          <name>
+            <value>Tree</value>
+          </name>
+          <items xsi:type="ELEMENT" archetype_node_id="at0037">
+            <name>
+              <value>Kommentar#1</value>
+            </name>
+            <value xsi:type="DV_TEXT">
+              <value>Comment 1</value>
+            </value>
+          </items>
+          <items xsi:type="ELEMENT" archetype_node_id="at0037">
+            <name>
+              <value>Kommentar#2</value>
+            </name>
+            <value xsi:type="DV_TEXT">
+              <value>Comment 2</value>
+            </value>
+          </items>
+          <items xsi:type="ELEMENT" archetype_node_id="at0009">
+            <name>
+              <value>Åpning av øynene (Ø)</value>
+            </name>
+            <value xsi:type="DV_ORDINAL">
+              <value>2</value>
+              <symbol>
+                <value>Ved smertestimulering</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0011</code_string>
+                </defining_code>
+              </symbol>
+            </value>
+          </items>
+          <items xsi:type="ELEMENT" archetype_node_id="at0007">
+            <name>
+              <value>Verbal respons (V)</value>
+            </name>
+            <value xsi:type="DV_ORDINAL">
+              <value>2</value>
+              <symbol>
+                <value>Uforståelige lyder</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0015</code_string>
+                </defining_code>
+              </symbol>
+            </value>
+          </items>
+          <items xsi:type="ELEMENT" archetype_node_id="at0008">
+            <name>
+              <value>Motorisk respons (M)</value>
+            </name>
+            <value xsi:type="DV_ORDINAL">
+              <value>2</value>
+              <symbol>
+                <value>Ekstensjon ved smerte</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0020</code_string>
+                </defining_code>
+              </symbol>
+            </value>
+          </items>
+          <items xsi:type="ELEMENT" archetype_node_id="at0026">
+            <name>
+              <value>Totalskår</value>
+            </name>
+            <value xsi:type="DV_COUNT">
+              <magnitude>6</magnitude>
+            </value>
+          </items>
+        </data>
+      </events>
+    </data>
+  </content>
+</composition>
