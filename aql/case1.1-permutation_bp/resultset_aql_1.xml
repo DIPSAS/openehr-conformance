@@ -29,63 +29,63 @@
       <items xsi:type="xs:string">2017-05-02T20:05:00+02:00</items>
       <items xsi:type="xs:double">100</items>
       <items xsi:type="xs:double">90</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:10:00+02:00</items>
       <items xsi:type="xs:double">100</items>
       <items xsi:type="xs:double">90</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:05:00+02:00</items>
       <items xsi:type="xs:double">101</items>
       <items xsi:type="xs:double">90</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:10:00+02:00</items>
       <items xsi:type="xs:double">101</items>
       <items xsi:type="xs:double">90</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:05:00+02:00</items>
       <items xsi:type="xs:double">100</items>
       <items xsi:type="xs:double">91</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:10:00+02:00</items>
       <items xsi:type="xs:double">100</items>
       <items xsi:type="xs:double">91</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:05:00+02:00</items>
       <items xsi:type="xs:double">101</items>
       <items xsi:type="xs:double">91</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:00:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:10:00+02:00</items>
       <items xsi:type="xs:double">101</items>
       <items xsi:type="xs:double">91</items>
-      <items xsi:type="xs:string">Lår voksne</items>
+      <items xsi:type="xs:string">Adult thigh</items>
     </row>
     <row>
       <items xsi:type="xs:string">2017-05-02T20:15:00+02:00</items>
       <items xsi:type="xs:string">2017-05-02T20:20:00+02:00</items>
       <items xsi:type="xs:double">102</items>
       <items xsi:type="xs:double">92</items>
-      <items xsi:type="xs:string">Store voksne</items>
+      <items xsi:type="xs:string">Large adult</items>
     </row>
   </rows>
   <tags />

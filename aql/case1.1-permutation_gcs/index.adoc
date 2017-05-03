@@ -1,0 +1,53 @@
+= Permutation and Glasgow Coma Scale 
+
+== Bakground 
+Glasgow Coma Scale has mandatory DV_ORDINAL elements and an optional and repeating comment element. This makes the archetype interesting to examine how to handle AQL on instances with several comments. 
+
+The structure of the _COMPOSITION_ is as follows: 
+
+[source]
+----
+1.0 Glasgow Coma Scale
+        origin:     08:30 
+1.1 POINT_EVENT 
+        time:       08:35
+        eye:        2
+        verbal:     2
+        motor:      2
+        score:      6
+        comment:    [Comment 1, Comment 2]
+----
+
+
+== AQL 1 - the naive approach 
+The first case follows the naive approach. As we will see - this approach gives the expected result. 
+
+The openEHR resultset for this AQL is provided as `resultset_aql_1.(json|xml)`. Below is the table summary of the result. 
+
+[source]
+----
+SELECT
+    o/data[at0001]/origin/value as Origin,
+    o/data[at0001]/events[at0002]/time/value as EventTime,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value/value as Eye,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value/value as Verbal,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/value as Motor,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0026]/value/magnitude as Score,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0037]/value/value as Comment
+
+FROM COMPOSITION c 
+CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.glasgow_coma_scale_dips.v1]
+WHERE c/uid/value = $cid
+----
+// '40eb5bda-fc5f-4d60-ad17-98048c27564c::default::1'
+
+[cols="^1,^3,^3,^2,^2,^2,^2,4", options="header"]
+|====
+| # |Origin | EventTime | Eye | Verbal | Motor | Score | Comment 
+|1|08:30 | 08:35 | 2 | 2 | 2 | 6 | Comment 1
+|2|08:30 | 08:35 | 2 | 2 | 2 | 6 | Comment 2
+|====
+
+NOTE: Thre is two rows in the resultset. This is expected since we need to display both comment. 
+
+CAUTION: Given this result - would the clinical read this as two measurements? Are this the ideal way to handle this? 

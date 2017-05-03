@@ -1,0 +1,45 @@
+{
+  "_type": "RESULTSET",
+  "_schemaVersion": "1.0.0",
+  "_format": "raw",
+  "_created": "2017-05-03T10:10:37.591+02:00",
+  "_generator": "DIPS.OpenEhr.ResultSets.Serialization.Json.ResultSetJsonWriter (5.0.0.0)",
+  "name": null,
+  "totalResults": 1,
+  "columns": [
+    {
+      "name": "Origin",
+      "path": "/data[at0001]/origin/value"
+    },
+    {
+      "name": "EventTime",
+      "path": "/data[at0001]/events[at0002]/time/value"
+    },
+    {
+      "name": "Eye",
+      "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value/value"
+    },
+    {
+      "name": "Verbal",
+      "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value/value"
+    },
+    {
+      "name": "Motor",
+      "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/value"
+    },
+    {
+      "name": "Score",
+      "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/value/magnitude"
+    }
+  ],
+  "rows": [
+    [
+      "2017-05-03T08:30:00+02:00",
+      "2017-05-03T08:35:00+02:00",
+      2,
+      2,
+      2,
+      6.0
+    ]
+  ]
+}
