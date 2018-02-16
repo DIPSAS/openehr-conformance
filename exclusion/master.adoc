@@ -4,6 +4,8 @@
 == Background 
 A very important use-case for an eHealth system is to be able to express the exlusion of something. The `openEHR-EHR-EVALUATION.exclusion_specific.v1` archetype is modelled to cover this use-case. 
 
+CAUTION: The content is still 'under-construction'
+
 === Archetypes
 
 http://www.openehr.org/ckm/#showArchetype_1013.1.2737[openEHR-EHR-EVALUATION.exclusion_specific.v1]:: To record a statement of exclusion about a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past.
