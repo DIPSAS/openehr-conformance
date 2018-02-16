@@ -1,0 +1,110 @@
+:imagesdir: images
+= Exclusion/inclusion 
+
+== Background 
+A very important use-case for an eHealth system is to be able to express the exlusion of something. The `openEHR-EHR-EVALUATION.exclusion_specific.v1` archetype is modelled to cover this use-case. 
+
+CAUTION: The content is still 'under-construction'
+
+=== Archetypes
+
+http://www.openehr.org/ckm/#showArchetype_1013.1.2737[openEHR-EHR-EVALUATION.exclusion_specific.v1]:: To record a statement of exclusion about a specific Problem/diagnosis, Family history, Medication, Procedure, Adverse reaction or other clinical item that is either not currently present, or have not been present in the past.
+http://www.openehr.org/ckm/#showArchetype_1013.1.2733[openEHR-EHR-EVALUATION.exclusion_global.v1] :: An overall statement of exclusion about all Problems/diagnoses, Family history, Medications, Procedures, Adverse reactions or other clinical items that are either not currently present, or have not been present in the past.
+
+== Surgery - as an use-case 
+Surgery is a resource intensive activity in hospitals. The activity is planned, executed and documented. For this use-case we will focus on to preventive procedures: 
+
+----
+SNOMED-CT::421728001::Anticoagulant prophylaxis
+SNOMED-CT::422181004::Antibiotic prophylaxis
+----
+
+=== In planning 
+The surgeon will recommend what kind of prophylaxis procedure should be performed. This recommendation could be based on guidelines either locally or from other sources. 
+
+Depending on the system/hospital the request and documentation of the prophylactic procedure might be on paper or in stated in an openEHR INSTRUCTION. 
+
+=== Execution 
+During surgery the team will either do as planned or abandon the plan related to the prophylactic procedures. 
+
+This information might be recorded in a diversity of systems: 
+
+* Paper based systems 
+* Local surgery systems 
+* As ACTIONS in the openEHR CDR 
+
+=== Post surgery documentation 
+When surgery is performed the surgery team needs to document what happended. The surgeon writes his summary of the procedure and as part of this there will some statements on what kind of prophylactic procedures was performed. 
+
+Given that this statement is entered in an openEHR based system. Then the structures SHOULD be equal no matter if the execution documentation was in paper, local proprietary system or an advanced closed-loop openEHR system. 
+
+
+=== Clinical modelling
+
+In this simplified example we have a Template with four archetypes: 
+
+. ACTION.procedure to document the performed surgery 
+. ACTION.procedure to document if Antibiotic prophylaxis was performed
+. ACTION.procedre to document if Thrombosis prophylaxis 
+. EVALUATION.exclusion_specific to express if the prophylactic procedures where not performed. 
+
+.Screenshot from Template Designer 
+image::template.png[]
+
+
+.ACTION.procedure to document when antibiotic prophylaxis was performed
+[source, xml]
+----
+ <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" name="Antibiotic prophylaxis">
+	<Rule path="/description[at0001]/items[at0002]">
+		<constraint xsi:type="textConstraint">
+			<includedValues>SNOMED-CT::422181004::Antibiotic prophylaxis</includedValues>
+		</constraint>
+	</Rule>
+	<Rule path="/description[at0001]/items[at0067]">
+		<constraint xsi:type="textConstraint">
+			<includedValues>SNOMED-CT::710170000::Administration of prophylactic treatment</includedValues>
+		</constraint>
+	</Rule>
+</Content>
+----
+
+.ACTION.procedure to document when thrombosis prophylaxis was performed
+[source,xml]
+----
+<Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" name="Thrombosis prophylaxis">
+	<Rule path="/description[at0001]/items[at0002]">
+		<constraint xsi:type="textConstraint">
+			<includedValues>SNOMED-CT::421728001::Anticoagulant prophylaxis</includedValues>
+		</constraint>
+	</Rule>
+	<Rule path="/description[at0001]/items[at0067]">
+		<constraint xsi:type="textConstraint">
+			<includedValues>SNOMED-CT::710170000::Administration of prophylactic treatment</includedValues>
+		</constraint>
+	</Rule>
+</Content>
+----
+
+
+.EVALUATION.exclusion_specific to express if any of the procedures was not performed
+[source,xml]
+----
+<Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.exclusion_specific.v1">
+<Rule path="/data[at0001]/items[at0003]">
+	<constraint xsi:type="textConstraint">
+		<includedValues>SNOMED-CT::710170000::Administration of prophylactic treatment</includedValues>
+		<includedValues>SNOMED-CT::421728001::Anticoagulant prophylaxis</includedValues>
+		<includedValues>SNOMED-CT::422181004::Antibiotic prophylaxis</includedValues>
+	</constraint>
+	<nameConstraint>
+		<excludedValues>local::at0008</excludedValues>
+		<excludedValues>local::at0005</excludedValues>
+		<excludedValues>local::at0006</excludedValues>
+		<excludedValues>local::at0004</excludedValues>
+	</nameConstraint>
+</Rule>
+</Content>
+----
+
+

@@ -6,6 +6,7 @@ This repository was created to collect some challenges we are facing when implem
 == Areas 
 
 * AQL 
+* Exclusion
 
 
 == AQL 
@@ -19,3 +20,6 @@ include::aql/case1-permutations/index.adoc[leveloffset=+2]
 AQL on FOLDER has some issues. In case 2 we have added some examples on how to query folders. 
 
 include::aql/case2-folders/index.adoc[leveloffset=+2]
+
+== Exclusion 
+This is a description of the challenges with expressing the inclusion and exclusion pattern in a computable way. 

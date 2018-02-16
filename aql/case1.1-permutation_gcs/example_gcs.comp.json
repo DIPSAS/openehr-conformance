@@ -1,0 +1,222 @@
+{
+  "_type": "COMPOSITION",
+  "archetype_node_id": "openEHR-EHR-COMPOSITION.encounter.v1",
+  "name": {
+    "value": "Case 1.2 - GCS - Permutation"
+  },
+  "uid": {
+    "_type": "OBJECT_VERSION_ID",
+    "value": "55d7fee5-5352-474e-b380-83e5cb6e1a61::91215053-854b-45b8-bb2a-3b0d255858d1::1"
+  },
+  "archetype_details": {
+    "archetype_id": {
+      "value": "openEHR-EHR-COMPOSITION.encounter.v1"
+    },
+    "template_id": {
+      "value": "Case 1.2 - GCS - Permutation"
+    },
+    "rm_version": "1.0.2"
+  },
+  "language": {
+    "terminology_id": {
+      "value": "openehr"
+    },
+    "code_string": "nb"
+  },
+  "territory": {
+    "terminology_id": {
+      "value": "openehr"
+    },
+    "code_string": "NO"
+  },
+  "category": {
+    "value": null,
+    "defining_code": {
+      "terminology_id": {
+        "value": "openehr"
+      },
+      "code_string": "433"
+    }
+  },
+  "composer": {
+    "_type": "PARTY_IDENTIFIED",
+    "name": "default"
+  },
+  "context": {
+    "start_time": {
+      "value": "2017-05-03T08:51:34.3390752+02:00"
+    },
+    "setting": {
+      "value": "secondary medical",
+      "defining_code": {
+        "terminology_id": {
+          "value": "openehr"
+        },
+        "code_string": "232"
+      }
+    },
+    "other_context": {
+      "_type": "ITEM_TREE",
+      "archetype_node_id": "at0001",
+      "name": {
+        "value": "Tree"
+      }
+    }
+  },
+  "content": [
+    {
+      "_type": "OBSERVATION",
+      "archetype_node_id": "openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1",
+      "name": {
+        "value": "Glasgow Coma Scale#1"
+      },
+      "archetype_details": {
+        "archetype_id": {
+          "value": "openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1"
+        },
+        "template_id": {
+          "value": "Case 1.2 - GCS - Permutation"
+        },
+        "rm_version": "1.0.2"
+      },
+      "language": {
+        "terminology_id": {
+          "value": "ISO_639-1"
+        },
+        "code_string": "nb"
+      },
+      "encoding": {
+        "terminology_id": {
+          "value": "IANA"
+        },
+        "code_string": "UTF-8"
+      },
+      "subject": {
+        "_type": "PARTY_SELF"
+      },
+      "data": {
+        "archetype_node_id": "at0001",
+        "name": {
+          "value": "Event Series"
+        },
+        "origin": {
+          "value": "2017-05-03T08:30:00+02:00"
+        },
+        "events": [
+          {
+            "_type": "POINT_EVENT",
+            "archetype_node_id": "at0002",
+            "name": {
+              "value": "Tidspunkt"
+            },
+            "time": {
+              "value": "2017-05-03T08:35:00+02:00"
+            },
+            "data": {
+              "_type": "ITEM_TREE",
+              "archetype_node_id": "at0003",
+              "name": {
+                "value": "Tree"
+              },
+              "items": [
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0037",
+                  "name": {
+                    "value": "Kommentar#1"
+                  },
+                  "value": {
+                    "_type": "DV_TEXT",
+                    "value": "Comment 1"
+                  }
+                },
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0037",
+                  "name": {
+                    "value": "Kommentar#2"
+                  },
+                  "value": {
+                    "_type": "DV_TEXT",
+                    "value": "Comment 2"
+                  }
+                },
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0009",
+                  "name": {
+                    "value": "Åpning av øynene (Ø)"
+                  },
+                  "value": {
+                    "_type": "DV_ORDINAL",
+                    "value": 2,
+                    "symbol": {
+                      "value": "Ved smertestimulering",
+                      "defining_code": {
+                        "terminology_id": {
+                          "value": "local"
+                        },
+                        "code_string": "at0011"
+                      }
+                    }
+                  }
+                },
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0007",
+                  "name": {
+                    "value": "Verbal respons (V)"
+                  },
+                  "value": {
+                    "_type": "DV_ORDINAL",
+                    "value": 2,
+                    "symbol": {
+                      "value": "Uforståelige lyder",
+                      "defining_code": {
+                        "terminology_id": {
+                          "value": "local"
+                        },
+                        "code_string": "at0015"
+                      }
+                    }
+                  }
+                },
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0008",
+                  "name": {
+                    "value": "Motorisk respons (M)"
+                  },
+                  "value": {
+                    "_type": "DV_ORDINAL",
+                    "value": 2,
+                    "symbol": {
+                      "value": "Ekstensjon ved smerte",
+                      "defining_code": {
+                        "terminology_id": {
+                          "value": "local"
+                        },
+                        "code_string": "at0020"
+                      }
+                    }
+                  }
+                },
+                {
+                  "_type": "ELEMENT",
+                  "archetype_node_id": "at0026",
+                  "name": {
+                    "value": "Totalskår"
+                  },
+                  "value": {
+                    "_type": "DV_COUNT",
+                    "magnitude": "6"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -36,7 +36,7 @@ SELECT
     o/data[at0001]/events[at0002]/data[at0003]/items[at0037]/value/value as Comment
 
 FROM COMPOSITION c 
-CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.glasgow_coma_scale_dips.v1]
+CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1]
 WHERE c/uid/value = $cid
 ----
 // '40eb5bda-fc5f-4d60-ad17-98048c27564c::default::1'
