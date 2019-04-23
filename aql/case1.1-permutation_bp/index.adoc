@@ -30,6 +30,9 @@ The structure of the _COMPOSITION_ is outlined below and the full instance is at
         cuff:       Large adult 
 ----
 
+
+
+
 NOTE: The units are removed. They will not change the example and the outputs. 
 
 // The following composition UIDs may be used when testing: 
@@ -68,6 +71,7 @@ WHERE c/uid/value = '78433b24-4ae6-4bf8-8aaa-9f247acc131c::91215053-854b-45b8-bb
 
 The openEHR resultset for this AQL is provided as `resultset_aql_1.(json|xml)`. Below is the table summary of the result. 
 
+.Case 1 - the naive resultset 
 [cols="1,3,3,2,2,2", options="header"]
 |====
 | # | Origin | EventTime | Systolic | Diastolic | Mansjett
@@ -77,10 +81,31 @@ The openEHR resultset for this AQL is provided as `resultset_aql_1.(json|xml)`. 
 |4 | 20:00 | 20:10 | 101|90 |Adult thigh 
 |5 | 20:00 | 20:05| 100|91|Adult thigh 
 |6 | 20:00 | 20:10 | 100| 91|Adult thigh 
-|7|20:00 | 20:05 | 101 |91 |Adult thigh 
-|8 |20:00 | 20:10 | 101 |91 |Adult thigh 
-|9 |20:15| 20:20 | 102 | 92 | Large adult 
+|7 | 20:00 | 20:05 | 101 |91 |Adult thigh 
+|8 | 20:00 | 20:10 | 101 |91 |Adult thigh 
+|9 | 20:15| 20:20 | 102 | 92 | Large adult 
 |====
+
+==== Array based resultset 
+This is an update `23.april 2019` where we explore the possibility to return array for paths with multiple results. For the AQL above we see that the first observation has two point_events. For each of the paths in the tree we return an array. The resultset is given in the table below. 
+
+.Case 1.1 - the array based resultset 
+[cols="1,3,3,2,2,2", options="header"]
+|====
+| # | Origin | EventTime | Systolic | Diastolic | Mansjett
+| 1 | 20:00  | [20:05, 20:10] | [100,101]| [90, 91] | Adult thigh
+| 2 | 20:15 | 20:20 | 102 | 92 | Large adult
+|====
+
+*What if* it was only one of the point_events with diastolic? Then there would be only one match (and no array). In the table below we simulate this by letting only the second point_event having a diastolic value. As you see there is only one primitiv here and you can't tell which point event it is bound to. To be sure you have to make your query more explicit, ie. as shown in AQL 2 with POINT_EVENT.
+.Case 1.2 - Where first blood pressure had no diastolic 
+[cols="1,3,3,2,2,2", options="header"]
+|====
+| # | Origin | EventTime | Systolic | Diastolic | Mansjett
+| 1 | 20:00  | [20:05, 20:10] | [100,101]| 91 | Adult thigh
+| 2 | 20:15 | 20:20 | 102 | 92 | Large adult
+|====
+
 
 CAUTION: This output is correct. It seems like it is 9 measurements. But in fact we have only 3. 
 [[bp.aql.2]]
@@ -114,6 +139,8 @@ The openEHR resultset for this AQL is provided as `resultset_aql_2.(json|xml)`.B
 The openEHR resultset for this AQL is provided as `resultset_aql_2.(json|xml)`.Below is the table summary of the result. 
 
 NOTE: This is correct and compared to <<bp.aql.1>> we see that only row 1,4 and 9 is returned.
+
+
 
   
     
