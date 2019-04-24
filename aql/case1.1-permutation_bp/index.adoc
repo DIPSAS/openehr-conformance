@@ -86,6 +86,8 @@ The openEHR resultset for this AQL is provided as `resultset_aql_1.(json|xml)`. 
 |9 | 20:15| 20:20 | 102 | 92 | Large adult 
 |====
 
+CAUTION: This output is correct. It seems like it is 9 measurements. But in fact we have only 3. 
+
 ==== Array based resultset 
 This is an update `23.april 2019` where we explore the possibility to return array for paths with multiple results. For the AQL above we see that the first observation has two point_events. For each of the paths in the tree we return an array. The resultset is given in the table below. 
 
@@ -107,7 +109,7 @@ This is an update `23.april 2019` where we explore the possibility to return arr
 |====
 
 
-CAUTION: This output is correct. It seems like it is 9 measurements. But in fact we have only 3. 
+
 [[bp.aql.2]]
 === AQL 2 - with POINT_EVENT
 This example gives the expected output for this kind of query on the given _COMPOSITION_. We did 3 measurements and they are all present with their respective values.
