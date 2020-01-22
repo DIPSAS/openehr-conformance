@@ -1,0 +1,18 @@
+title: CASE 1 Permutations
+path: "."
+files:
+  - example_real.xml
+aqls:
+  - title: "Something"
+    aql: " select
+        o/data[at0001]/origin as time,
+        o/data[at0001]/events[at0002]/name/value as EventName,
+        o/data[at0001]/events[at0002]/data/archetype_node_id as ItemTreeName,
+        o/data[at0001]/events[at0002]/data/items[at0004]/name/value as ClusterName,
+        o/data[at0001]/events[at0002]/data/items[at0004]/items[at0005]/value/magnitude as Value
+        
+    from
+        composition c 
+    contains
+        observation o[openEHR-EHR-OBSERVATION.multiple_events_cluster.v0] 
+    "
