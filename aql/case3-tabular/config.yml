@@ -1,0 +1,54 @@
+title: Vedtak og profesjon 
+path: "."
+files: 
+  - profesjon_vedtak.xml 
+aqls: 
+  - title: Profesjon_Naive_Approach 
+    description: Den opprinnelige AQL som gir tippekupong i radene. Årsaken er at den gir en rad for hver ADMIN_ENTRY i COMPOSITION 
+    aql: "SELECT 
+    
+    c/context/start_time/value AS contextStartTime,
+    c/archetype_details/template_id/value AS templateId,
+    a_e/archetype_details/archetype_id/value AS sourcearchetype,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Forlopskoordinator']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS forlopskoordinator,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig spesialist']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligspesialist,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig behandler']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligbehandler
+
+FROM COMPOSITION c
+  CONTAINS ADMIN_ENTRY a_e[openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1]
+    CONTAINS CLUSTER c1[openEHR-EHR-CLUSTER.individual_professional_dips.v1]
+      CONTAINS CLUSTER c2[openEHR-EHR-CLUSTER.person_name_dips.v1]
+"
+  - title: Profesjon_opprinnelig_patten
+    description: AQL som gir for mange rader. 
+    aql: "SELECT 
+    
+    c/context/start_time AS contextStartTime,
+    c/archetype_details/template_id/value AS templateId,
+    a_e/archetype_details/archetype_id/value AS sourcearchetype,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Forlopskoordinator']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS forlopskoordinator,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig spesialist']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligspesialist,
+    a_e/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig behandler']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligbehandler
+    
+    FROM COMPOSITION c
+      CONTAINS ADMIN_ENTRY a_e[openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1]
+        CONTAINS CLUSTER c1[openEHR-EHR-CLUSTER.individual_professional_dips.v1]
+          CONTAINS CLUSTER c2[openEHR-EHR-CLUSTER.person_name_dips.v1]"
+
+
+  - title: Profesjon_Path_Fra_Composition 
+    description: Gir en rad med en kolonne for hver av profesjonene. NB! Trikset er å spørre mot kun en av ADMIN_ENTRY for å hente sourcearchetype  
+    aql: "SELECT
+    
+      c/context/start_time AS contextStartTime,
+      c/archetype_details/template_id/value AS templateId,
+      c/content[openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1 and name/value = 'Administrativ kontainer forlopskoord']/archetype_details/archetype_id/value AS sourcearchetype,
+      c/content/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Forlopskoordinator']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS forlopskoordinator,
+      c/content/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig spesialist']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligspesialist,
+      c/content/data[at0001]/items[openEHR-EHR-CLUSTER.individual_professional_dips.v1 and name/value='Ansvarlig behandler']/items[openEHR-EHR-CLUSTER.person_name_dips.v1]/items[at0001]/value/value AS ansvarligbehandler
+    
+    FROM COMPOSITION c  CONTAINS ADMIN_ENTRY a_e[openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1]
+        CONTAINS CLUSTER c1[openEHR-EHR-CLUSTER.individual_professional_dips.v1]
+          CONTAINS CLUSTER c2[openEHR-EHR-CLUSTER.person_name_dips.v1]
+"
+

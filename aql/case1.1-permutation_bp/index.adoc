@@ -115,16 +115,16 @@ This is an update `23.april 2019` where we explore the possibility to return arr
 This example gives the expected output for this kind of query on the given _COMPOSITION_. We did 3 measurements and they are all present with their respective values.
 [source]
 ----
-SELECT
-    o/data[at0001]/origin/value as Origin,
-    pe/time/value as EventTime,
-    pe/data[at0003]/items[at0004]/value/magnitude as Systolic,
-    pe/data[at0003]/items[at0005]/value/magnitude as Diastolic,
-    o/protocol[at0011]/items[at0013]/value/value as Cuff
-       
-FROM Composition c   
-    CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.blood_pressure.v1]  
-    CONTAINS POINT_EVENT pe 
+    SELECT
+        o/data[at0001]/origin/value as Origin,
+        pe/time/value as EventTime,
+        pe/data[at0003]/items[at0004]/value/magnitude as Systolic,
+        pe/data[at0003]/items[at0005]/value/magnitude as Diastolic,
+        o/protocol[at0011]/items[at0013]/value/value as Cuff
+
+    FROM Composition c   
+        CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.blood_pressure.v1]  
+        CONTAINS POINT_EVENT pe 
 WHERE c/uid/value = '78433b24-4ae6-4bf8-8aaa-9f247acc131c::91215053-854b-45b8-bb2a-3b0d255858d1::1'   
 ----
 

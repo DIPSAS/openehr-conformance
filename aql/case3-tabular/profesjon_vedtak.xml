@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<composition p1:type="COMPOSITION" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" archetype_node_id="openEHR-EHR-COMPOSITION.trajectory.v1" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openehr.org/v1">
+  <name>
+    <value>Pasientforløp</value>
+  </name>
+  <uid xsi:type="OBJECT_VERSION_ID">
+    <value>9fb35da3-4b3e-4d91-b426-b95930e39795::ehr_craft::1</value>
+  </uid>
+  <archetype_details>
+    <archetype_id>
+      <value>openEHR-EHR-COMPOSITION.trajectory.v1</value>
+    </archetype_id>
+    <template_id>
+      <value>Trajectory_profession_v1_0_0</value>
+    </template_id>
+    <rm_version>1.0.4</rm_version>
+  </archetype_details>
+  <language>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>nb</code_string>
+  </language>
+  <territory>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>NO</code_string>
+  </territory>
+  <category>
+    <value />
+    <defining_code>
+      <terminology_id>
+        <value>openehr</value>
+      </terminology_id>
+      <code_string>433</code_string>
+    </defining_code>
+  </category>
+  <composer xsi:type="PARTY_IDENTIFIED">
+    <name>default</name>
+  </composer>
+  <context>
+    <start_time>
+      <value>2020-01-22T12:25:27.5226225+01:00</value>
+    </start_time>
+    <setting>
+      <value>secondary medical</value>
+      <defining_code>
+        <terminology_id>
+          <value>openehr</value>
+        </terminology_id>
+        <code_string>232</code_string>
+      </defining_code>
+    </setting>
+    <other_context xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tre</value>
+      </name>
+    </other_context>
+  </context>
+  <content xsi:type="ADMIN_ENTRY" archetype_node_id="openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1">
+    <name>
+      <value>Administrativ kontainer dips ansv beh</value>
+    </name>
+    <archetype_details>
+      <archetype_id>
+        <value>openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1</value>
+      </archetype_id>
+      <template_id>
+        <value>Trajectory_profession_v1_0_0</value>
+      </template_id>
+      <rm_version>1.0.4</rm_version>
+    </archetype_details>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <encoding>
+      <terminology_id>
+        <value>IANA</value>
+      </terminology_id>
+      <code_string>UTF-8</code_string>
+    </encoding>
+    <subject xsi:type="PARTY_SELF" />
+    <data xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tree</value>
+      </name>
+      <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.individual_professional_dips.v1">
+        <name>
+          <value>Ansvarlig behandler</value>
+        </name>
+        <archetype_details>
+          <archetype_id>
+            <value>openEHR-EHR-CLUSTER.individual_professional_dips.v1</value>
+          </archetype_id>
+          <template_id>
+            <value>Trajectory_profession_v1_0_0</value>
+          </template_id>
+          <rm_version>1.0.4</rm_version>
+        </archetype_details>
+        <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.person_name_dips.v1">
+          <name>
+            <value>Person navn</value>
+          </name>
+          <archetype_details>
+            <archetype_id>
+              <value>openEHR-EHR-CLUSTER.person_name_dips.v1</value>
+            </archetype_id>
+            <template_id>
+              <value>Trajectory_profession_v1_0_0</value>
+            </template_id>
+            <rm_version>1.0.4</rm_version>
+          </archetype_details>
+          <items xsi:type="ELEMENT" archetype_node_id="at0001">
+            <name>
+              <value>Ustrukturert navn</value>
+            </name>
+            <value xsi:type="DV_CODED_TEXT">
+              <value>GJESTLAND, JARAND, KOMMUNELEGEN I SØRFOLD</value>
+              <mappings>
+                <match>=</match>
+                <target>
+                  <terminology_id>
+                    <value>DIPS</value>
+                  </terminology_id>
+                  <code_string>10054046</code_string>
+                </target>
+              </mappings>
+              <defining_code>
+                <terminology_id>
+                  <value>DIPS</value>
+                </terminology_id>
+                <code_string>81276</code_string>
+              </defining_code>
+            </value>
+          </items>
+        </items>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0002">
+        <name>
+          <value>Type informasjon</value>
+        </name>
+        <value xsi:type="DV_CODED_TEXT">
+          <value>Behandlingsansvarlig lege</value>
+          <defining_code>
+            <terminology_id>
+              <value>2.16.578.1.12.4.1.1-9034</value>
+            </terminology_id>
+            <code_string>3</code_string>
+          </defining_code>
+        </value>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0003">
+        <name>
+          <value>Gyldighetsdato fra</value>
+        </name>
+        <value xsi:type="DV_DATE_TIME">
+          <value>2019-05-21T00:00:00+02:00</value>
+        </value>
+      </items>
+    </data>
+  </content>
+  <content xsi:type="ADMIN_ENTRY" archetype_node_id="openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1">
+    <name>
+      <value>Administrativ kontainer ansv spes</value>
+    </name>
+    <archetype_details>
+      <archetype_id>
+        <value>openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1</value>
+      </archetype_id>
+      <template_id>
+        <value>Trajectory_profession_v1_0_0</value>
+      </template_id>
+      <rm_version>1.0.4</rm_version>
+    </archetype_details>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <encoding>
+      <terminology_id>
+        <value>IANA</value>
+      </terminology_id>
+      <code_string>UTF-8</code_string>
+    </encoding>
+    <subject xsi:type="PARTY_SELF" />
+    <data xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tree</value>
+      </name>
+      <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.individual_professional_dips.v1">
+        <name>
+          <value>Ansvarlig spesialist</value>
+        </name>
+        <archetype_details>
+          <archetype_id>
+            <value>openEHR-EHR-CLUSTER.individual_professional_dips.v1</value>
+          </archetype_id>
+          <template_id>
+            <value>Trajectory_profession_v1_0_0</value>
+          </template_id>
+          <rm_version>1.0.4</rm_version>
+        </archetype_details>
+        <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.person_name_dips.v1">
+          <name>
+            <value>Person navn</value>
+          </name>
+          <archetype_details>
+            <archetype_id>
+              <value>openEHR-EHR-CLUSTER.person_name_dips.v1</value>
+            </archetype_id>
+            <template_id>
+              <value>Trajectory_profession_v1_0_0</value>
+            </template_id>
+            <rm_version>1.0.4</rm_version>
+          </archetype_details>
+          <items xsi:type="ELEMENT" archetype_node_id="at0001">
+            <name>
+              <value>Ustrukturert navn</value>
+            </name>
+            <value xsi:type="DV_CODED_TEXT">
+              <value>JOHANSEN, DAG RØSSUM, HELGELANDSSYKEHUSET HF</value>
+              <mappings>
+                <match>=</match>
+                <target>
+                  <terminology_id>
+                    <value>DIPS</value>
+                  </terminology_id>
+                  <code_string>5001935</code_string>
+                </target>
+              </mappings>
+              <defining_code>
+                <terminology_id>
+                  <value>DIPS</value>
+                </terminology_id>
+                <code_string>RAJO1</code_string>
+              </defining_code>
+            </value>
+          </items>
+        </items>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0002">
+        <name>
+          <value>Type informasjon</value>
+        </name>
+        <value xsi:type="DV_CODED_TEXT">
+          <value>Ansvarlig spesialist</value>
+          <defining_code>
+            <terminology_id>
+              <value>DIPS_Profesjon</value>
+            </terminology_id>
+            <code_string>1</code_string>
+          </defining_code>
+        </value>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0003">
+        <name>
+          <value>Gyldighetsdato fra</value>
+        </name>
+        <value xsi:type="DV_DATE_TIME">
+          <value>2019-05-21T00:00:00+02:00</value>
+        </value>
+      </items>
+    </data>
+  </content>
+  <content xsi:type="ADMIN_ENTRY" archetype_node_id="openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1">
+    <name>
+      <value>Administrativ kontainer forlopskoord</value>
+    </name>
+    <archetype_details>
+      <archetype_id>
+        <value>openEHR-EHR-ADMIN_ENTRY.administrative_container_dips.v1</value>
+      </archetype_id>
+      <template_id>
+        <value>Trajectory_profession_v1_0_0</value>
+      </template_id>
+      <rm_version>1.0.4</rm_version>
+    </archetype_details>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <encoding>
+      <terminology_id>
+        <value>IANA</value>
+      </terminology_id>
+      <code_string>UTF-8</code_string>
+    </encoding>
+    <subject xsi:type="PARTY_SELF" />
+    <data xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tree</value>
+      </name>
+      <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.individual_professional_dips.v1">
+        <name>
+          <value>Forlopskoordinator</value>
+        </name>
+        <archetype_details>
+          <archetype_id>
+            <value>openEHR-EHR-CLUSTER.individual_professional_dips.v1</value>
+          </archetype_id>
+          <template_id>
+            <value>Trajectory_profession_v1_0_0</value>
+          </template_id>
+          <rm_version>1.0.4</rm_version>
+        </archetype_details>
+        <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.person_name_dips.v1">
+          <name>
+            <value>Person navn</value>
+          </name>
+          <archetype_details>
+            <archetype_id>
+              <value>openEHR-EHR-CLUSTER.person_name_dips.v1</value>
+            </archetype_id>
+            <template_id>
+              <value>Trajectory_profession_v1_0_0</value>
+            </template_id>
+            <rm_version>1.0.4</rm_version>
+          </archetype_details>
+          <items xsi:type="ELEMENT" archetype_node_id="at0001">
+            <name>
+              <value>Ustrukturert navn</value>
+            </name>
+            <value xsi:type="DV_CODED_TEXT">
+              <value>JOHANSEN, MARI KRISTIN, HAVNA LEGESENTER</value>
+              <mappings>
+                <match>=</match>
+                <target>
+                  <terminology_id>
+                    <value>DIPS</value>
+                  </terminology_id>
+                  <code_string>5000472</code_string>
+                </target>
+              </mappings>
+              <defining_code>
+                <terminology_id>
+                  <value>DIPS</value>
+                </terminology_id>
+                <code_string>85213</code_string>
+              </defining_code>
+            </value>
+          </items>
+        </items>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0002">
+        <name>
+          <value>Type informasjon</value>
+        </name>
+        <value xsi:type="DV_CODED_TEXT">
+          <value>Forløpskoordinator</value>
+          <defining_code>
+            <terminology_id>
+              <value>DIPS_Profesjon</value>
+            </terminology_id>
+            <code_string>2</code_string>
+          </defining_code>
+        </value>
+      </items>
+      <items xsi:type="ELEMENT" archetype_node_id="at0003">
+        <name>
+          <value>Gyldighetsdato fra</value>
+        </name>
+        <value xsi:type="DV_DATE_TIME">
+          <value>2019-05-21T00:00:00+02:00</value>
+        </value>
+      </items>
+    </data>
+  </content>
+</composition>
