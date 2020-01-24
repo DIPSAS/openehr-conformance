@@ -1,0 +1,28 @@
+title: Case 1.1 Permutation
+path: "."
+files:
+  - example_bp.comp.xml
+aqls:
+  - title: AQL Naive approach
+    description: Straight forward AQL which will give permutations
+    aql: "SELECT
+    o/data[at0001]/origin as Origin, 
+    o/data[at0001]/events[at0006]/time as EventTime,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude as Systolic,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude as Diastolic,
+    o/protocol[at0011]/items[at0013]/value/value as Cuff
+         
+FROM Composition c   
+CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.blood_pressure.v1]"
+  - title: AQL using POINT Event
+    description: AQL using point event will give the correct ouput here 
+    aql: "    SELECT
+        o/data[at0001]/origin as Origin,
+        pe/time as EventTime,
+        pe/data[at0003]/items[at0004]/value/magnitude as Systolic,
+        pe/data[at0003]/items[at0005]/value/magnitude as Diastolic,
+        o/protocol[at0011]/items[at0013]/value/value as Cuff
+
+    FROM Composition c   
+        CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.blood_pressure.v1]  
+        CONTAINS POINT_EVENT pe "

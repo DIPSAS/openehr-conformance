@@ -1,0 +1,18 @@
+title: CASE 1.1 Permutation in Glasgow Coma Scale 
+path: "."
+files: 
+  - example_gcs.comp.xml
+aqls: 
+  - title: GCS_1.0
+    description: The naive approach which gives one row for each comment 
+    aql: "SELECT
+    o/data[at0001]/origin as Origin,
+    o/data[at0001]/events[at0002]/time as EventTime,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value/value as Eye,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value/value as Verbal,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/value as Motor,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0026]/value/magnitude as Score,
+    o/data[at0001]/events[at0002]/data[at0003]/items[at0037]/value/value as Comment
+
+FROM COMPOSITION c 
+CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.glasgow_coma_scale_dips.v1]"

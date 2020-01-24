@@ -1,0 +1,6 @@
+= Profesions 
+
+== About 
+This example has named ADMIN_ENTRY archetypes which is used to record different roles on patient trajectories. The client wants to query the data into one row for each trajectory (or COMPOSITION)
+
+Take a look at the `yml` files which defines the AQL.
